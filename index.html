@@ -8,40 +8,37 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <script src="./index.js"></script>
   </head>
 
   <body>
     <main>
-        <div class="content-container">
+        <form>
             <p class="heading">What's up, </p>
-            <p class="uppercase">CREATE A TODO</p>
-    
-            <form>
-                <div class="task-input">
-                    <p>What's on your todo list?</p>
-                    <input type="text" name="task" placeholder="e.g get a milk">
-                </div>
-                
-                <div class="category-selection">
-                    <p>Pick a category</p>
-                    <div class="category">
-                        <div class="category-item">
-                            <input type="radio" id="business" name="category-option">
-                            <p>Business</p>
-                        </div>
-                        <div class="category-item">
-                            <input type="radio" id="personal" name="category-option">
-                            <p>Personal</p>
-                        </div>
+
+            <div class="task-input">
+                <p class="uppercase">CREATE A TODO</p> 
+                <p class="grey-txt">What's on your todo list?</p>
+                <input type="text" name="task" placeholder="e.g get a milk">
+            </div>
+            
+            
+            <div class="category-selection">
+                <p class="grey-txt">Pick a category</p>
+                <div class="category">
+                    <div class="category-item">
+                        <input type="radio" class="business" name="category-option">
+                        <p>Business</p>
+                    </div>
+                    <div class="category-item">
+                        <input type="radio" class="personal" name="category-option">
+                        <p>Personal</p>
                     </div>
                 </div>
-                <button type="submit">Submit</button>
-            </form>
-            
+            </div>
+            <button class="submit" type="submit">Add todo</button>
             <p class="uppercase">TODO LIST</p>
-        </div>
-        
-
+        </form>
     </main>
 
   </body>
