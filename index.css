@@ -1,11 +1,110 @@
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    font-family: 'Rubik';
+}
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid black;
+    width: 30%;
+    min-width: 400px;
 }
 
 form {
-    border: solid black;
+    width: 100%;
+    min-width: 400px;
+}
 
+input[type="text"] {
+    width: 94.5%;
+    padding: 0.7rem;
+    border: 0.1rem solid white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(193, 193, 193);
+    outline: none;
+}
+
+.category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.category-item {
+    border: solid white;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgb(193, 193, 193);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+    padding-top: 1rem;
+}
+
+.submit {
+    width: 100%;
+    height: 40px;
+    margin: 1px auto;
+    display: block; 
+    color: white;
+    background-color: rgb(4, 132, 245);
+    box-shadow: 2px 2px 5px lightblue;
+    border: none;
+    border-radius: 7px;
+    margin: 1rem 0;
+}
+
+.task-input {
+    margin: 20px auto; 
+}
+
+
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffffff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(239, 12, 167);
+    box-shadow: 0 0 5px rgb(224, 141, 198);
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(239, 12, 167);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.grey-txt {
+    font-weight: bold;
+    color: #808080;
+    margin: 7px 0;
+}
+
+.heading{
+    font-size: 35px;
+}
+
+.uppercase {
+    margin: 7px 0;
 }
