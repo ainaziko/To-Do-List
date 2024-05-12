@@ -1,4 +1,5 @@
 var tasksList = document.querySelector('.tasks');
+var deleteTaskBtn = document.querySelector('.delete-task');
 
 
 document.getElementById('todoForm').addEventListener('submit', function(event) {
@@ -34,9 +35,17 @@ document.getElementById('todoForm').addEventListener('submit', function(event) {
                 <button class="delete-task">Delete</button>
             </div>
         </div>
-        
+
         `;
 
         tasksList.appendChild(todoInfoDiv);
+
+
+        //delete task
+        const deleteTaskBtn = todoInfoDiv.querySelector('.delete-task');
+        deleteTaskBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            todoInfoDiv.remove();
+        });       
 });
 
