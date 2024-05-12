@@ -1,27 +1,16 @@
 var tasksList = document.querySelector('.tasks');
-var deleteTaskBtn = document.querySelector('.delete-task');
 
 
 document.getElementById('todoForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
     const selectedRadioButton = document.querySelector('input[name="category-option"]:checked');
+    const task = document.querySelector('input[name="task"]').value;    
 
-    if (selectedRadioButton) {
-        console.log("Category: ", selectedRadioButton.className);
-    } else {
-        console.log("Please select a category");
-        return;
-    }
-
-    const task = document.querySelector('input[name="task"]').value;
-    console.log("Task: ", task);
-    
-
+    //add task
     const todoInfoDiv = document.createElement('div');
         todoInfoDiv.classList.add('todo-info');
 
-        // Set the content of the div
         todoInfoDiv.innerHTML = `
         
         <div class="task">
