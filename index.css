@@ -49,7 +49,7 @@ input[type="text"] {
 
 .submit {
     width: 100%;
-    height: 40px;
+    height: 45px;
     margin: 1px auto;
     display: block; 
     color: white;
@@ -70,7 +70,7 @@ input[type='radio']:after {
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    top: -2px;
+    top: -4px;
     left: -1px;
     position: relative;
     background-color: #ffffff;
@@ -85,14 +85,43 @@ input[type='radio']:checked:after {
     width: 15px;
     height: 15px;
     border-radius: 15px;
-    top: -2px;
+    top: -4px;
     left: -1px;
     position: relative;
     background-color: rgb(239, 12, 167);
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgb(224, 141, 198);
+}
+
+input[class="business"]:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -4px;
+    left: -1px;
+    position: relative;
+    background-color: #ffffff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(12, 99, 239);
+    box-shadow: 0 0 5px rgb(141, 160, 224);
+}
+
+input[class="business"]:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -4px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(12, 99, 239);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(141, 160, 224);
 }
 
 .grey-txt {
@@ -108,3 +137,71 @@ input[type='radio']:checked:after {
 .uppercase {
     margin: 7px 0;
 }
+
+.tasks {
+    width: 100%;
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    border: solid white;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgb(193, 193, 193);
+    border-radius: 20px;
+}
+
+.task-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0.5rem;
+    max-width: fit-content;
+}
+
+
+.task__text {
+    margin-left: 0.5rem;
+
+}
+
+.btns {
+    width: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.edit-task {
+    width: 60px;
+    height: 30px;
+    color: #ffffff;
+    background: #eb31b4;
+    border-radius: 5px;
+    border: none;
+}
+
+.delete-task {
+    width: 60px;
+    height: 30px;
+    color: #ffffff;
+    background: #eb3131;
+    border-radius: 5px;
+    border: none;
+}
+
+/*
+
+<div class="task">
+    <input type="radio" class="task__type">
+    <p class="task__text">${task}</p>
+    <button class="edit-task">Edit</button>
+    <button class="delete-task">Delete</button>
+</div>
+
+
+*/
