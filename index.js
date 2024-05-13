@@ -11,11 +11,16 @@ document.getElementById('todoForm').addEventListener('submit', function(event) {
     const todoInfoDiv = document.createElement('div');
         todoInfoDiv.classList.add('todo-info');
 
+        var checkboxColorClassName = 'business';
+        if (selectedRadioButton.className === 'personal') {
+            checkboxDesignClassName = 'personal';
+        }
+            
         todoInfoDiv.innerHTML = `
         
         <div class="task">
             <div class="task-description">
-                <input type="radio" class="${selectedRadioButton.className}">
+                <input class="${checkboxColorClassName}" type="checkbox" name="checkbox" onchange="strikeTask(this)">
                 <p class="task__text">${task}</p>
             </div>
             
@@ -38,3 +43,16 @@ document.getElementById('todoForm').addEventListener('submit', function(event) {
         });       
 });
 
+
+//mark task as done
+function strikeTask(checkbox) {
+    const parentDiv = checkbox.closest('.task-description');
+    const taskText = parentDiv.querySelector('.task__text');
+    
+    if(checkbox.checked) {
+        taskText.classList.add('strikeout');
+    } else {
+        taskText.classList.remove('strikeout');
+    }
+
+}
