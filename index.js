@@ -13,7 +13,7 @@ document.getElementById('todoForm').addEventListener('submit', function(event) {
 
         var checkboxColorClassName = 'business';
         if (selectedRadioButton.className === 'personal') {
-            checkboxDesignClassName = 'personal';
+            checkboxColorClassName = 'personal';
         }
             
         todoInfoDiv.innerHTML = `
@@ -25,7 +25,7 @@ document.getElementById('todoForm').addEventListener('submit', function(event) {
             </div>
             
             <div class="btns">
-                <button class="edit-task">Edit</button>
+                <button class="edit-task" onclick="editTask(this)">Edit</button>
                 <button class="delete-task">Delete</button>
             </div>
         </div>
@@ -54,5 +54,20 @@ function strikeTask(checkbox) {
     } else {
         taskText.classList.remove('strikeout');
     }
+}
 
+
+function editTask(editButton) {
+    const parentDiv = editButton.closest('.task');
+    const taskDescription = parentDiv.querySelector('.task__text');
+    taskDescription.setAttribute('contentEditable', 'true');
+
+    taskDescription.focus();
+
+    const range = document.createRange();
+    const sel = window.getSelection();
+    range.selectNodeContents(taskDescription);
+    range.collapse(false);
+    sel.removeAllRanges();
+    sel.addRange(range);
 }
