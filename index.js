@@ -25,18 +25,19 @@ function handleFormSubmission(event) {
         return;
     }
 
-    const todoInfoDiv = createTaskElement(selectedRadioButton, taskDescription);
+    createTaskElement(selectedRadioButton, taskDescription);
 }
 
 
 function createTaskElement(selectedRadioButton, taskDescription) {
     const todoInfoDiv = document.createElement('div');
     todoInfoDiv.classList.add('todo-info');
+    var id = Date.now();
 
     const checkboxColorClassName = selectedRadioButton && selectedRadioButton.className === 'personal' ? 'personal' : 'business';
 
     todoInfoDiv.innerHTML = `
-        <div class="task">
+        <div class="task" id="${id}">
             <div class="task-description">
                 <input class="${checkboxColorClassName}" type="checkbox" name="checkbox" onchange="strikeTask(this)">
                 <p class="task__text">${taskDescription}</p>
@@ -49,6 +50,7 @@ function createTaskElement(selectedRadioButton, taskDescription) {
     `;
 
     tasksList.appendChild(todoInfoDiv);
+    console.log(todoInfoDiv);
 }
 
 function strikeTask(checkbox) {
